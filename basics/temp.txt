@@ -1,0 +1,2 @@
+// scala value creation
+foo = Apple

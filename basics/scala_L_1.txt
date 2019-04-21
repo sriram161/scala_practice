@@ -1,0 +1,14 @@
+scala setup 
+install java
+$java -version # verify java
+$java -jar scala-x.xx.xx-installer.jar
+
+$scala -version 
+println("Hello, Scala!"); 
+
+# Running scala in script form
+scala HelloWorld.scala 
+
+# Compile program in scala.
+scalac Helloworld.scala # this command generates a class file. 
+scala HelloWorld # execute the program using class file.
