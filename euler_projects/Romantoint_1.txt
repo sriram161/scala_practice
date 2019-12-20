@@ -1,0 +1,27 @@
+class Solution:
+    lookup = { 'I' : 1,
+               'V' : 5,
+               'X' : 10,
+               'L' : 50,
+               'C' : 100, 
+               'D' : 500,
+               'M' : 1000}
+    def romanToInt(self, s: str) -> int:
+        value = 0
+        s_ = iter(s[:])
+
+        try:
+            current_value = Solution.lookup.get(next(s_))
+            next_value = Solution.lookup.get(next(s_))
+            while(True):
+                if current_value >= next_value:
+                    value = value + current_value 
+                    
+                elif current_value < next_value:
+                    value = value - current_value
+                  
+                current_value = next_value
+                next_value = Solution.lookup.get(next(s_))
+        except StopIteration:
+            value = value + current_value
+            return value
